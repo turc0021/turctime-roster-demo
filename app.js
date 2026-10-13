@@ -1,9 +1,9 @@
-const KEY='turctime-roster-v1';const $=s=>document.querySelector(s);
+const KEY='turctime-roster-v2-pgh';const $=s=>document.querySelector(s);
 const uid=()=>Math.random().toString(36).slice(2,10);
 function daysAgo(n){const d=new Date();d.setDate(d.getDate()-n);return d.toISOString().slice(0,10)}
-function seed(){const P=[["Jake Miller",12,"SS","Wake Forest Cougars","Ava Miller"],["Ethan Brooks",14,"P/1B","Triangle Thunder","Mark Brooks"],["Liam Carter",10,"C","Heritage Huskies","Sara Carter"],["Noah Davis",16,"CF","Wake Forest HS JV","Tom Davis"],["Mason Lee",13,"2B","NC Bandits","Grace Lee"],["Owen Reed",11,"3B","Wake Forest Cougars","Kim Reed"],["Carter Hill",15,"P","Triangle Thunder","Dan Hill"],["Ryan Foster",9,"OF","Heritage Huskies","Jen Foster"]];
+function seed(){const P=[["Jake Miller",12,"SS","North Allegheny Tigers","Ava Miller"],["Ethan Brooks",14,"P/1B","Steel City Thunder","Mark Brooks"],["Liam Carter",10,"C","Mt. Lebanon Blue Devils","Sara Carter"],["Noah Davis",16,"CF","Pine-Richland HS JV","Tom Davis"],["Mason Lee",13,"2B","Pittsburgh Bandits","Grace Lee"],["Owen Reed",11,"3B","North Allegheny Tigers","Kim Reed"],["Carter Hill",15,"P","Steel City Thunder","Dan Hill"],["Ryan Foster",9,"OF","Mt. Lebanon Blue Devils","Jen Foster"]];
  const types=["Hitting","Positional","Pitching","Virtual"];const players=[],sessions=[];
- P.forEach(([n,a,pos,t,g],i)=>{const id=uid(),f=n.split(' ')[0].toLowerCase();players.push({id,sample:true,name:n+" (Sample)",age:a,position:pos,team:t,phone:"(919) 555-01"+(10+i),email:f+".sample@example.com",guardianName:g,guardianPhone:"(919) 555-02"+(10+i),guardianEmail:g.split(' ')[0].toLowerCase()+".parent@example.com",notes:"Sample player for demo."});
+ P.forEach(([n,a,pos,t,g],i)=>{const id=uid(),f=n.split(' ')[0].toLowerCase();players.push({id,sample:true,name:n+" (Sample)",age:a,position:pos,team:t,phone:"(412) 555-01"+(10+i),email:f+".sample@example.com",guardianName:g,guardianPhone:"(412) 555-02"+(10+i),guardianEmail:g.split(' ')[0].toLowerCase()+".parent@example.com",notes:"Sample player for demo."});
   for(let k=0;k<2+(i%4);k++)sessions.push({id:uid(),playerId:id,date:daysAgo(k*9+i*2),type:types[(i+k)%4],duration:[45,60,60,90][k%4],notes:"Sample session"})});
  return{players,sessions}}
 let db=JSON.parse(localStorage.getItem(KEY)||'null')||seed();const save=()=>localStorage.setItem(KEY,JSON.stringify(db));save();
