@@ -1,0 +1,14 @@
+:root{--navy:#0f2a4a;--red:#c8102e;--bg:#f4f6f9}*{box-sizing:border-box}body{margin:0;font-family:system-ui,sans-serif;background:var(--bg);color:#1b1b1b}
+header{background:var(--navy);color:#fff;padding:1rem 1rem 0}header h1{margin:0;font-size:1.5rem}header p{margin:.2rem 0 .8rem;opacity:.8}
+nav{display:flex;gap:.3rem}nav button{background:transparent;color:#fff;border:0;padding:.7rem 1rem;border-bottom:3px solid transparent;font-size:1rem;cursor:pointer}nav button.active{border-color:var(--red);font-weight:600}
+main{max-width:1100px;margin:auto;padding:1rem}.tab{display:none}.tab.active{display:block}
+button{padding:.55rem .9rem;border:1px solid #ccd;border-radius:6px;background:#fff;cursor:pointer}.primary{background:var(--red);color:#fff;border-color:var(--red)}.danger{color:var(--red);border-color:var(--red)}
+.bar{display:flex;gap:.5rem;margin-bottom:1rem}.bar input{flex:1}input,select,textarea{width:100%;padding:.5rem;border:1px solid #ccd;border-radius:6px;font:inherit}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1rem}.card{background:#fff;border-radius:10px;padding:1rem;box-shadow:0 1px 3px #0002}
+.card h3{margin:0 0 .3rem}.badge{display:inline-block;background:#ffe3a3;font-size:.7rem;padding:.1rem .4rem;border-radius:4px;margin-left:.3rem;vertical-align:middle}.count{float:right;background:var(--navy);color:#fff;border-radius:20px;padding:.2rem .6rem;font-size:.85rem}
+.card small{color:#555;display:block}.card .actions{margin-top:.6rem;display:flex;gap:.4rem}
+.panel{background:#fff;padding:1rem;border-radius:10px;display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:.7rem;align-items:end;margin-bottom:1rem}.panel h2,.full{grid-column:1/-1}
+label{font-size:.85rem;color:#333;display:block}.tablewrap{overflow-x:auto}table{width:100%;border-collapse:collapse;background:#fff}th,td{padding:.5rem;border-bottom:1px solid #e3e6ea;text-align:left;font-size:.9rem}th{background:#e9edf3}tfoot td{font-weight:700}
+footer{text-align:center;padding:1.5rem}dialog{border:0;border-radius:12px;max-width:560px;width:95%}fieldset{border:1px solid #dde;border-radius:8px;display:grid;grid-template-columns:1fr 1fr;gap:.5rem;margin-bottom:.7rem}
+dialog .actions{display:flex;justify-content:flex-end;gap:.5rem;margin-top:.7rem}@media(max-width:500px){fieldset{grid-template-columns:1fr}}
+@media print{header nav,.noprint,footer,.tab:not(#reports){display:none!important}#reports{display:block!important}header{background:#fff;color:#000}body{background:#fff}}
